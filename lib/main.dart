@@ -1,3 +1,4 @@
+import 'package:constructor_data/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:constructor_data/widget/expenses.dart';
 
@@ -15,10 +16,20 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
+        themeMode: ThemeMode.system,
+        // to apply darkmode just add darkTheme option in scaffold
+        // themeMode: ThemeMode.system, to access theme set by user
+        darkTheme: ThemeData.dark(
           useMaterial3: true,
-          colorSchemeSeed: Colors.blue,
-        ),
+        ).copyWith(
+            colorScheme:
+                const ColorScheme.highContrastDark(background: Colors.black)),
+        theme: ThemeData(
+            useMaterial3: true,
+            colorSchemeSeed: Colors.blue,
+            cardTheme: const CardTheme(shadowColor: Colors.grey),
+            textTheme: const TextTheme(
+                titleLarge: TextStyle(fontWeight: FontWeight.w300))),
         home: const MyHomePage(title: 'Expense 3rd  '),
       );
     });

@@ -21,6 +21,15 @@ class ExpensesList extends StatelessWidget {
           //I did dot passed value to on removed
           onDismissed: (direction) => onRemoved(expenses[index]),
           direction: DismissDirection.endToStart,
+          //red background when deleting all the stuff on dismissible
+          background: Container(
+              color: Theme.of(context).colorScheme.error,
+              margin: const EdgeInsets.symmetric(vertical: 6),
+              alignment: FractionalOffset.centerRight,
+              child: const Icon(
+                Icons.delete,
+                color: Colors.white,
+              )),
           child: ExpenseItem(expense: expenses[index])),
     );
   }
