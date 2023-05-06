@@ -1,3 +1,4 @@
+import 'package:constructor_data/widget/chart/chart.dart';
 import 'package:constructor_data/widget/expensesList/expenses_list.dart';
 import 'package:constructor_data/models/expense_model.dart';
 import 'package:constructor_data/widget/new_expense.dart';
@@ -75,7 +76,7 @@ class _ExpensesState extends State<Expenses> {
         child: Column(
           children: [
             //add button
-            const Text('Chart'),
+            Chart(expenses: _registeredExpenses),
             _registeredExpenses.isEmpty
                 ? const Center(
                     child: Text("No Expense Add Some"),
@@ -90,15 +91,3 @@ class _ExpensesState extends State<Expenses> {
     );
   }
 }
-
-
-// final expenseIndex = _registeredExpenses.indexOf(removedExpense);
-//     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-//       duration: const Duration(seconds: 5),
-//       content: const Text("Deleted"),
-//       action: SnackBarAction(
-//           label: 'Undo',
-//           onPressed: () {
-//             _registeredExpenses.insert(expenseIndex, removedExpense);
-//           }),
-//     )); 

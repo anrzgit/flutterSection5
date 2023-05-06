@@ -24,7 +24,7 @@ class ExpensesList extends StatelessWidget {
           //red background when deleting all the stuff on dismissible
           background: Container(
               color: Theme.of(context).colorScheme.error,
-              margin: const EdgeInsets.symmetric(vertical: 6),
+              margin: const EdgeInsets.symmetric(vertical: 17),
               alignment: FractionalOffset.centerRight,
               child: const Icon(
                 Icons.delete,

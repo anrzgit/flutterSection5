@@ -34,3 +34,22 @@ class Expense {
       : id = uid.v4();
   //initialiser list can be used to initialise the id by another value which will not be provided by constructor
 }
+
+class ExpenseBucket {
+  ExpenseBucket(this.expenses, this.category);
+
+  //Named Constructor
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses.where((i) => i.category == category).toList();
+  //to filter out the values with same category
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalExpenses {
+    double sum = 0;
+    for (var i in expenses) {
+      sum += i.amount;
+    }
+    return sum;
+  }
+}

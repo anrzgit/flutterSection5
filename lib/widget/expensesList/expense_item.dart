@@ -9,7 +9,7 @@ class ExpenseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+      margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       color: Theme.of(context).primaryColorLight,
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
